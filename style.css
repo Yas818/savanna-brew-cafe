@@ -1,0 +1,1022 @@
+/* =========================================
+   1. ROOT VARIABLES AND GENERAL SETTINGS
+========================================= */
+
+:root {
+    --primary-color: #6F4E37;
+    --secondary-color: #F5E9DA;
+    --accent-color: #D9822B;
+    --dark-color: #2B1B12;
+    --white-color: #FFFFFF;
+    --light-brown: #E8D5C0;
+
+    --heading-font: "Playfair Display", Georgia, serif;
+    --body-font: "Open Sans", Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    line-height: 1.3;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   2. HEADER AND NAVIGATION
+========================================= */
+
+.site-header {
+    background-color: var(--white-color);
+    padding: 18px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus,
+.main-nav a.active {
+    color: var(--accent-color);
+}
+
+.main-nav a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   3. HERO SECTION
+========================================= */
+
+.hero {
+    min-height: 550px;
+    background-image:
+        linear-gradient(rgba(43, 27, 18, 0.55),
+        rgba(43, 27, 18, 0.55)),
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--white-color);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-tagline {
+    color: var(--secondary-color);
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content > p:not(.hero-tagline) {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   4. BUTTON STYLING
+========================================= */
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    padding: 13px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   5. WELCOME SECTION
+========================================= */
+
+.welcome-section {
+    text-align: center;
+    padding: 75px 0 45px;
+}
+
+.welcome-section h2,
+.featured-section h2 {
+    color: var(--primary-color);
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.welcome-section p {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #59483D;
+}
+
+
+/* =========================================
+   6. FEATURED PRODUCTS SECTION
+========================================= */
+
+.featured-section {
+    padding: 50px 0 75px;
+    text-align: center;
+}
+
+.section-intro {
+    margin-bottom: 35px;
+}
+
+.featured-cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.featured-card {
+    flex: 1;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+.featured-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.card-content h3 {
+    color: var(--primary-color);
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.card-content p {
+    margin-bottom: 10px;
+}
+
+.card-content .price {
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.section-button {
+    margin-top: 35px;
+}
+
+
+/* =========================================
+   7. CALL TO ACTION SECTION
+========================================= */
+
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.cta-section h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   8. FOOTER
+========================================= */
+
+.site-footer {
+    background-color: var(--dark-color);
+    color: var(--secondary-color);
+    padding-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    padding-bottom: 35px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h3 {
+    color: var(--accent-color);
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-column a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover,
+.footer-column a:focus {
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 18px;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   9. RESPONSIVE DESIGN - TABLETS AND PHONES
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* Header and navigation */
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Hero section */
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    /* Featured cards */
+    .featured-cards {
+        flex-direction: column;
+    }
+
+    .featured-card {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    /* Headings */
+    .welcome-section h2,
+    .featured-section h2,
+    .cta-section h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================
+   10. SMALL MOBILE SCREENS
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero-content > p:not(.hero-tagline) {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 11px 20px;
+    }
+
+    .welcome-section {
+        padding-top: 50px;
+    }
+}
+/* =========================================
+   11. ABOUT US PAGE
+========================================= */
+
+/* Page banner */
+.page-banner {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.page-banner h1 {
+    color: var(--primary-color);
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.page-banner p {
+    color: var(--dark-color);
+}
+
+
+/* About section - Two column layout */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    color: var(--primary-color);
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    margin-bottom: 18px;
+    color: #59483D;
+}
+
+.about-content .btn {
+    margin-top: 10px;
+}
+
+
+/* Our Values section */
+.values-section {
+    background-color: var(--secondary-color);
+    padding: 65px 0;
+    text-align: center;
+}
+
+.values-section h2 {
+    color: var(--primary-color);
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.values-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    list-style: none;
+    margin-top: 35px;
+}
+
+.values-list li {
+    flex: 1;
+    background-color: var(--white-color);
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.values-list li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.values-list h3 {
+    color: var(--accent-color);
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+
+/* Founder's quotation */
+.owner-quote {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.owner-quote h2 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.owner-quote blockquote {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    background-color: var(--secondary-color);
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+    font-family: var(--heading-font);
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.quote-author {
+    margin-top: 20px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+/* About page responsive design */
+@media screen and (max-width: 768px) {
+
+    .about-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image,
+    .about-content {
+        width: 100%;
+    }
+
+    .about-image img {
+        height: 320px;
+    }
+
+    .values-list {
+        flex-direction: column;
+    }
+
+    .page-banner h1 {
+        font-size: 32px;
+    }
+
+    .owner-quote blockquote {
+        font-size: 18px;
+    }
+}
+/* =========================================
+   12. MENU PAGE
+========================================= */
+
+/* Menu introduction */
+.menu-intro {
+    text-align: center;
+    padding-top: 55px;
+    padding-bottom: 35px;
+}
+
+.menu-intro h2 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.menu-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Menu sections */
+.menu-section {
+    padding-top: 25px;
+    padding-bottom: 35px;
+}
+
+.menu-section h2 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+
+/* Table wrapper for mobile scrolling */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+
+/* Menu tables */
+.menu-table {
+    width: 100%;
+    min-width: 550px;
+    border-collapse: collapse;
+    background-color: var(--white-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Table headings */
+.menu-table thead {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.menu-table th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 700;
+}
+
+
+/* Table cells */
+.menu-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #E5D8CB;
+}
+
+
+/* Alternating row colours */
+.menu-table tbody tr:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+
+/* Row hover effect */
+.menu-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.menu-table tbody tr:hover {
+    background-color: var(--light-brown);
+}
+
+
+/* Right-aligned price column */
+.menu-table th:last-child,
+.menu-table .price-column {
+    text-align: right;
+}
+
+.menu-table .price-column {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+
+/* Menu page responsive design */
+@media screen and (max-width: 768px) {
+
+    .menu-intro h2 {
+        font-size: 27px;
+    }
+
+    .menu-section h2 {
+        font-size: 24px;
+    }
+
+    .menu-table {
+        min-width: 550px;
+    }
+}
+/* ==============================
+   GALLERY PAGE STYLES
+================================= */
+
+.gallery-section {
+    padding: 50px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: var(--dark-color);
+}
+
+/* CSS Grid layout for gallery images */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 230px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-item figcaption {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Tablet layout: two columns */
+@media (max-width: 768px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-section {
+        padding: 35px 5%;
+    }
+}
+
+/* Mobile layout: one column */
+@media (max-width: 480px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 250px;
+    }
+}
+/* ==============================
+   CONTACT PAGE STYLES
+================================= */
+
+.contact-section {
+    padding: 50px 8%;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.reservation-form,
+.contact-information {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.reservation-form h2,
+.contact-information h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.reservation-form > p {
+    margin-bottom: 25px;
+}
+
+/* Form fields */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #B9A99A;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: var(--white-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Radio buttons */
+.occasion-group {
+    border: 1px solid #B9A99A;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.occasion-group legend {
+    font-weight: 600;
+    padding: 0 5px;
+}
+
+.radio-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.radio-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.radio-options input {
+    accent-color: var(--primary-color);
+}
+
+/* Submit button */
+.submit-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 13px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Contact information */
+.contact-detail {
+    margin-top: 22px;
+}
+
+.contact-detail h3 {
+    color: var(--primary-color);
+    margin-bottom: 6px;
+}
+
+.contact-detail a {
+    color: var(--primary-color);
+}
+
+.contact-detail a:hover,
+.contact-detail a:focus {
+    color: var(--accent-color);
+}
+
+/* Opening hours table */
+.opening-hours {
+    margin-top: 30px;
+}
+
+.opening-hours h2 {
+    margin-bottom: 15px;
+}
+
+.opening-hours table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white-color);
+}
+
+.opening-hours th {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px;
+    text-align: left;
+}
+
+.opening-hours td {
+    padding: 12px;
+    border-bottom: 1px solid #DDD;
+}
+
+.opening-hours tbody tr:nth-child(even) {
+    background-color: #F5E9DA;
+}
+
+.opening-hours tbody tr:hover {
+    background-color: #EAD5C0;
+}
+
+/* Responsive contact layout */
+@media (max-width: 768px) {
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        padding: 35px 5%;
+    }
+
+    .reservation-form {
+        order: 1;
+    }
+
+    .contact-information {
+        order: 2;
+    }
+
+    .radio-options {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .reservation-form,
+    .contact-information {
+        padding: 20px;
+    }
+
+    .opening-hours td,
+    .opening-hours th {
+        padding: 9px 6px;
+        font-size: 14px;
+    }
+}
+/* Social Media Logos */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.2);
+}
+/* Google Map Styling */
+.map-container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.map-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 12px;
+    display: block;
+}
